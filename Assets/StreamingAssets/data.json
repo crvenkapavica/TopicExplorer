@@ -1,0 +1,212 @@
+{
+    "languages": [
+        {
+            "id": "hr",
+            "name": "Hrvatski"
+        },
+        {
+            "id": "en",
+            "name": "English"
+        },
+        {
+            "id": "de",
+            "name": "Deutsch"
+        }
+    ],
+	"Contents": {
+		"Topics": [
+			{
+				"Name": {
+						"hr": "Je li svijet simulacija?",
+						"en": "Is the world a simulation?",
+						"de": "Ist die Welt eine Simulation?"
+				},
+				"Details" : {
+						"hr": "Rečeno je da kada bi bilo moguće stvoriti simulaciju života, to bi gotovo sigurno značilo da smo već u simulaciji. Budući da stvaramo sve sofisticiranije simulacije, samo je pitanje vremena, čini se, prije nego što napravimo jednu tako uvjerljivu kao što je ova, čime ćemo dokazati da zapravo živimo u simulaciji.",
+						"en": "It's been said that if it were possible to create a simulation of life, it would almost certainly mean that we are in a simulation already. Since we are creating more and more sofisticated simulations, it is only a matter of time, it appears, before we make one as convincing as this one, therefore proving that we are, in fact, living in a simulation.",
+						"de": "Es heißt, wenn es möglich wäre, eine Simulation des Lebens zu erstellen, würde dies mit ziemlicher Sicherheit bedeuten, dass wir uns bereits in einer Simulation befinden. Da wir immer ausgefeiltere Simulationen erstellen, scheint es nur eine Frage der Zeit zu sein, bis wir eine so überzeugende Simulation wie diese erstellen und damit beweisen, dass wir tatsächlich in einer Simulation leben."
+				},
+				"Media": [
+					{
+						"Name": "Gallery",
+						"Photos": [
+							{
+								"Path": "simulation1.png"
+							},
+							{								
+								"Path": "simulation2.png"
+							},
+							{
+								"Path": "simulation3.png"
+							}
+						]
+					},
+					{
+						"Name": "Audio",
+						"Path": "audio1.ogg"
+					}
+				]
+			},
+			{
+				"Name": {
+						"hr": "Kvantni kolaps",
+						"en": "Quantum collapse",
+						"de": "Quantenkollaps"
+				},
+				"Details" : {
+						"hr": "Također poznat kao kolaps valne funkcije, temeljni je koncept u kvantnoj mehanici koji opisuje prijelaz kvantnog sustava iz superpozicije stanja u jedno stanje. Ovaj se proces događa kada se vrši promatranje ili mjerenje na kvantnom sustavu, prisiljavajući ga da odabere jedno od mogućih stanja u kojem je bio prije mjerenja. To znači da elektroni mogu biti čestice i valovi u isto vrijeme.",
+						"en": "Also known as wave function collapse, is a fundamental concept in quantum mechanics describing the transition of a quantum system from a superposition of states to a single state. This process occurs when an observation or measurement is made on a quantum system, forcing it to choose one of the possible states it was in prior to measurement. This means that electrons can be particles and waves at the same time.",
+						"de": "Auch Wellenfunktionskollaps genannt, ist ein grundlegendes Konzept der Quantenmechanik, das den Übergang eines Quantensystems von einer Überlagerung von Zuständen zu einem einzelnen Zustand beschreibt. Dieser Prozess findet statt, wenn eine Beobachtung oder Messung an einem Quantensystem durchgeführt wird und es dazu gezwungen wird, einen der möglichen Zustände zu wählen, in dem es sich vor der Messung befand. Das bedeutet, dass Elektronen gleichzeitig Teilchen und Wellen sein können."
+				},
+				"Media": [
+					{
+						"Name": "Gallery",
+						"Photos": [
+							{
+								"Path": "feather.png"
+							},
+							{								
+								"Path": "bird.png"
+							},
+							{
+								"Path": "stripes.png"
+							}
+						]
+					},
+					{
+						"Name": "Audio",
+						"Path": "audio2.ogg"
+					}
+				]
+			},
+			{
+				"Name": {
+						"hr": "Piramide",
+						"en": "The Pyramids",
+						"de": "Die Pyramiden"
+				},
+				"Details" : {
+						"hr": "Piramide imaju ugrađen sustav za stvaranje elektriciteta plimom i osekom. Za razliku od školske doktrine, koja govore da su ti uski prostori stvoerni za dječju radnu snagu. Zanimljivo je da su točno ispod sazvježđa i da zapravo imaju 8 strana a ne 4. Time piramide predlažu da su korištene kao elektrane, ili možda teleportacijski uređaji. Egipćani koji su ih naselili su prerušili Sfinge da izgledaju kao faraoni. Također su isklijesali hijeroglife da bi stekli i preuzli slavu drevnih čuda.",
+						"en": "The pyramids have a built-in system for generating electricity with the tides. Unlike the school doctrine, which says that these narrow spaces are created for child labor. It is interesting that they are directly below the constellations and that they actually have 8 sides and not 4. This suggests that the pyramids were used as power plants, or perhaps teleportation devices. The Egyptians who inhabited them disguised the Sphinxes to look like pharaohs. They also carved hieroglyphs to gain and claim the glory of ancient miracles.",
+						"de": "Die Pyramiden verfügen über ein eingebautes System zur Stromerzeugung mit den Gezeiten. Anders als die Schuldoktrin, die besagt, dass diese engen Räume für Kinderarbeit geschaffen sind. Interessant ist, dass sie sich direkt unter den Sternbildern befinden und tatsächlich acht und nicht vier Seiten haben. Dies deutet darauf hin, dass die Pyramiden als Kraftwerke oder vielleicht als Teleportationsgeräte genutzt wurden. Die dort lebenden Ägypter verkleideten die Sphinxen so, dass sie wie Pharaonen aussahen. Sie schnitzten auch Hieroglyphen, um den Ruhm antiker Wunder zu erlangen und zu beanspruchen."
+				},
+				"Media": [
+					{
+						"Name": "Gallery",
+						"Photos": [
+							{
+								"Path": "pyramid1.png"
+							},
+							{								
+								"Path": "pyramid2.png"
+							},
+							{
+								"Path": "pyramid3.png"
+							}
+						]
+					},
+					{
+						"Name": "Audio",
+						"Path": "audio3.ogg"
+					}
+				]
+			},
+			{
+				"Name": {
+						"hr": "Ispitivanje",
+						"en": "Questioning",
+						"de": "Hinterfragen"
+				},
+				"Details" : {
+						"hr": "Ispitivanje je cjeloživotni proces. To je upravo ono što ga čini toliko drugačijim od svake sumnje. Ispitivanje se bavi stvarnošću i dovodi u pitanje sve što vidi. Preispitivanje dovodi do stalnog napada na intelektualni status quo, pri čemu je vjerojatnije da će sumnja dovesti do rezigniranog prihvaćanja. Jer ako je mogućnost istine upitna, zašto se jednostavno ne poigrati s najzgodnijom laži?",
+						"en": "Questioning is a lifelong process. That's precisely what makes it so unlike doubt. Questioning engages with reality, interrogating all it sees. Questioning leads to a constant assault on the intellectual status quo, where doubt is far more likely to lead to resigned acceptance. After all, when the possibility of truth is doubtful, why not simply play along with the most convenient lie?",
+						"de": "Hinterfragen ist ein lebenslanger Prozess. Genau das macht es so anders als jeder Zweifel. Die Befragung befasst sich mit der Realität und hinterfragt alles, was sie sieht. Das Hinterfragen führt zu einem ständigen Angriff auf den intellektuellen Status quo, wobei Zweifel viel eher zu resignierter Akzeptanz führen. Denn wenn die Möglichkeit der Wahrheit zweifelhaft ist, warum spielt man dann nicht einfach mit der bequemsten Lüge mit?"
+				},
+				"Media": [
+					{
+						"Name": "Gallery",
+						"Photos": [
+							{
+								"Path": "question1.png"
+							},
+							{								
+								"Path": "question2.png"
+							},
+							{
+								"Path": "question3.png"
+							}
+						]
+					},
+					{
+						"Name": "Audio",
+						"Path": "audio4.ogg"
+					}
+				]
+			},
+			{
+				"Name": {
+						"hr": "Cvrčak 3301",
+						"en": "Cicada 3301",
+						"de": "Zikade 3301"
+				},
+				"Details" : {
+						"hr": "Cvrčak 3301 nadimak je dan anonimnoj organizaciji koja je postavila niz složenih zagonetki i igrica alternativne stvarnosti na mreži, počevši od 2012. Zagonetke, koje su uključivale naprednu kriptografiju, steganografiju i širok raspon drugih disciplina, vodile su rješavače širom svijeta kroz niz fizičkih i digitalnih tragova. Do danas, Liber Primus - za koji se kaže da sadrži tajne života, nije (barem javno) dešifriran.",
+						"en": "Cicada 3301 is a nickname given to an anonymous organization that posted a series of complex puzzles and alternate reality games online, starting in 2012. The puzzles, which involved advanced cryptography, steganography, and a wide range of other disciplines, led solvers around the globe through a series of both physical and digital clues. To this day, the Liber Primus - which is said to containt the secrets of life, has not been (at least publicly) deciphered.",
+						"de": "Zikade 3301 ist ein Spitzname für eine anonyme Organisation, die ab 2012 eine Reihe komplexer Rätsel und Alternative-Reality-Spiele online stellte. Die Rätsel, die fortgeschrittene Kryptographie, Steganographie und eine Vielzahl anderer Disziplinen umfassten, führten Rätsellöser rund um den Globus durch eine Reihe sowohl physischer als auch digitaler Hinweise. Bis heute wurde der Liber Primus, der angeblich die Geheimnisse des Lebens enthält, (zumindest nicht öffentlich) entschlüsselt."
+				},
+				"Media": [
+					{
+						"Name": "Gallery",
+						"Photos": [
+							{
+								"Path": "cicada1.png"
+							},
+							{								
+								"Path": "cicada2.png"
+							},
+							{
+								"Path": "cicada3.png"
+							}
+						]
+					},
+					{
+						"Name": "Audio",
+						"Path": "audio5.ogg"
+					}
+				]
+			},
+			{
+				"Name": {
+						"hr": "Reinkarnacija (Hinduizam)",
+						"en": "Reincarnation (Hinduism)",
+						"de": "Reinkarnation (Hinduismus)"
+				},
+				"Details" : {
+						"hr": "U hinduizmu, reinkarnacija, poznata kao Samsara, je vjerovanje da se duša (Atman) ponovno rađa u ciklusu života, smrti i ponovnog rođenja, kojim upravljaju nečije akcije i djela (karma) u prošlim životima. Na prirodu svake reinkarnacije utječe karma pojedinca, što može dovesti do ponovnog rođenja u različitim oblicima, uključujući različite kaste, vrste ili životne uvjete, odražavajući moralne i duhovne lekcije potrebne za evoluciju duše. Konačni cilj ovog ciklusa je postizanje Mokshe, stanja oslobođenja i prosvjetljenja u kojem se duša oslobađa Samsare i sjedinjuje s božanskim, koje obično predstavlja Brahman, vrhovni kozmički duh koji završava proces reinkarnacije i ponovnog rođenja.",
+						"en": "In Hinduism, reincarnation, known as Samsara, is the belief that the soul (Atman) is reborn in a cycle of life, death, and rebirth, governed by one's actions and deeds (karma) in their past lives. The nature of each reincarnation is influenced by the individual's karma, which can lead to being reborn in various forms, including different castes, species, or life conditions, reflecting the moral and spiritual lessons needed for the soul's evolution. The ultimate goal of this cycle is to achieve Moksha, a state of liberation and enlightenment where the soul breaks free from Samsara and unites with the divine, typically represented by Brahman, the supreme cosmic spirit which ends the process of reincarnation and being reborn.",
+						"de": "Im Hinduismus ist Reinkarnation, bekannt als Samsara, der Glaube, dass die Seele (Atman) in einem Kreislauf von Leben, Tod und Wiedergeburt wiedergeboren wird, der von den Handlungen und Taten (Karma) eines Menschen in seinen vergangenen Leben bestimmt wird. Die Art jeder Reinkarnation wird durch das Karma des Einzelnen beeinflusst, was dazu führen kann, dass er in verschiedenen Formen wiedergeboren wird, einschließlich verschiedener Kasten, Arten oder Lebensbedingungen, was die moralischen und spirituellen Lehren widerspiegelt, die für die Entwicklung der Seele erforderlich sind. Das ultimative Ziel dieses Zyklus ist das Erreichen von Moksha, einem Zustand der Befreiung und Erleuchtung, in dem sich die Seele von Samsara löst und sich mit dem Göttlichen vereint, typischerweise repräsentiert durch Brahman, den höchsten kosmischen Geist, der den Prozess der Reinkarnation und Wiedergeburt beendet."
+				},
+				"Media": [
+					{
+						"Name": "Gallery",
+						"Photos": [
+							{
+								"Path": "reinkarnacija1.png"
+							},
+							{								
+								"Path": "reinkarnacija2.png"
+							},
+							{
+								"Path": "reinkarnacija3.png"
+							}
+						]
+					},
+					{
+						"Name": "Audio",
+						"Path": "audio6.ogg"
+					}
+				]
+			}
+		]
+	}
+}
