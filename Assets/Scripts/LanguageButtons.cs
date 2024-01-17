@@ -14,7 +14,7 @@ public class LanguageButtons : MonoBehaviour
         CreateLanguageButtons();
     }
 
-    private void CreateLanguageButtons()
+    public void CreateLanguageButtons()
     {
         translatedContents = Persistence.Instance.translatedContents;
 

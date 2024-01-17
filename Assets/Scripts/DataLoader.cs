@@ -79,6 +79,7 @@ public class TranslatedContents
 
 public class DataLoader
 {
+    private int downloadCounter = 0;
     private string[] fileUrls = new string[]
     {
         "https://raw.githubusercontent.com/crvenkapavica/TopicExplorerData/main/data.json",
@@ -117,33 +118,27 @@ public class DataLoader
         {
             yield return DownloadAndSave(url, Path.GetFileName(url));
         }
-
-        CopyFilesToPersistentData();
     }
 
     private IEnumerator DownloadAndSave(string fileUrl, string fileName)
     {
-        string savePath = Path.Combine(Application.streamingAssetsPath, fileName);
+        downloadCounter++;
+        string savePath = Path.Combine(Application.persistentDataPath, fileName);
 
         using (UnityWebRequest webRequest = UnityWebRequest.Get(fileUrl))
         {
-            webRequest.downloadHandler = new DownloadHandlerFile(savePath);
+           // webRequest.downloadHandler = new DownloadHandlerFile(savePath);
             yield return webRequest.SendWebRequest();
+
+            byte[] fileData = webRequest.downloadHandler.data;
+            File.WriteAllBytes(savePath, fileData);
         }
+        downloadCounter--;
     }
 
-    private void CopyFilesToPersistentData()
+    public IEnumerator WaitForAllDownloads()
     {
-        foreach (var url in fileUrls)
-        {
-            string fileName = Path.GetFileName(url);
-            string sourcePath = Path.Combine(Application.streamingAssetsPath, fileName);
-            string destinationPath = Path.Combine(Application.persistentDataPath, fileName);
-
-            if (File.Exists(sourcePath))
-            {
-                File.Copy(sourcePath, destinationPath, true);
-            }
-        }
+        yield return new WaitUntil(() => downloadCounter == 0);
+        Persistence.Instance.LoadData();
     }
 }

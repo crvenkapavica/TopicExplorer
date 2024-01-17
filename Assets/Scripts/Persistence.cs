@@ -39,10 +39,11 @@ public class Persistence : MonoBehaviour
 
     private void Start()
     {
-        LoadData();
+        StartCoroutine(dataLoader.WaitForAllDownloads());
+        //LoadData();
     }
 
-    private void LoadData()
+    public void LoadData()
     {
         string fileName = "data.json";
         string path = Path.Combine(Application.persistentDataPath, fileName);
@@ -65,6 +66,8 @@ public class Persistence : MonoBehaviour
             }
             ++topicID;
         }
+
+        GameObject.FindObjectOfType<LanguageButtons>().CreateLanguageButtons();
     }
 
     private IEnumerator LoadAudioClip(int ID, string relativePath)
