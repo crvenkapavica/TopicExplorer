@@ -8,13 +8,13 @@ using UnityEngine.SceneManagement;
 
 public class Persistence : MonoBehaviour
 {
-    public TextAsset jsonFile;
     public TranslatedContents translatedContents;
 
     private static Persistence instance;
     private DataLoader dataLoader = new DataLoader();
     private Dictionary<int, AudioClip> audioClips = new Dictionary<int, AudioClip>();
     private List<int> sceneIDs = new List<int>();
+    private TextAsset jsonFile;
     
 
     private void Awake()
