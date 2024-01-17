@@ -24,6 +24,7 @@ public class Persistence : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(gameObject);
 
+            StartCoroutine(dataLoader.DownloadJsonData());
             StartCoroutine(dataLoader.DownloadFiles());
         }   
         else
@@ -39,7 +40,6 @@ public class Persistence : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine(dataLoader.WaitForAllDownloads());
     }
 
     public void LoadData()
@@ -71,6 +71,8 @@ public class Persistence : MonoBehaviour
 
     private IEnumerator LoadAudioClip(int ID, string relativePath)
     {
+        yield return dataLoader.DownloadFiles();
+
         string path = "file:///" + Path.Combine(Application.persistentDataPath, relativePath);
         
         using (UnityWebRequest request = UnityWebRequestMultimedia.GetAudioClip(path, AudioType.OGGVORBIS))

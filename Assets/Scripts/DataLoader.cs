@@ -79,7 +79,6 @@ public class TranslatedContents
 
 public class DataLoader
 {
-    private int downloadCounter = 0;
     private string[] fileUrls = new string[]
     {
         "https://raw.githubusercontent.com/crvenkapavica/TopicExplorerData/main/data.json",
@@ -114,15 +113,14 @@ public class DataLoader
 
     public IEnumerator DownloadFiles()
     {
-        foreach (var url in fileUrls)
+        for (int i = 1; i < fileUrls.Length; i++)
         {
-            yield return DownloadAndSave(url, Path.GetFileName(url));
+            yield return DownloadAndSave(fileUrls[i], Path.GetFileName(fileUrls[i]));
         }
     }
 
     private IEnumerator DownloadAndSave(string fileUrl, string fileName)
     {
-        downloadCounter++;
         string savePath = Path.Combine(Application.persistentDataPath, fileName);
 
         using (UnityWebRequest webRequest = UnityWebRequest.Get(fileUrl))
@@ -132,12 +130,15 @@ public class DataLoader
             byte[] fileData = webRequest.downloadHandler.data;
             File.WriteAllBytes(savePath, fileData);
         }
-        downloadCounter--;
     }
 
-    public IEnumerator WaitForAllDownloads()
+    public IEnumerator DownloadJsonData()
     {
-        yield return new WaitUntil(() => downloadCounter == 0);
+        string fileUrl = fileUrls[0];
+        string fileName = Path.GetFileName(fileUrl);
+
+        yield return DownloadAndSave(fileUrl, fileName);
+
         Persistence.Instance.LoadData();
     }
 }
