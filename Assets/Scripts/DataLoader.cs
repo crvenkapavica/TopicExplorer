@@ -127,7 +127,6 @@ public class DataLoader
 
         using (UnityWebRequest webRequest = UnityWebRequest.Get(fileUrl))
         {
-           // webRequest.downloadHandler = new DownloadHandlerFile(savePath);
             yield return webRequest.SendWebRequest();
 
             byte[] fileData = webRequest.downloadHandler.data;

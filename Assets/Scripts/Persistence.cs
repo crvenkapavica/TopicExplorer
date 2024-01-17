@@ -40,7 +40,6 @@ public class Persistence : MonoBehaviour
     private void Start()
     {
         StartCoroutine(dataLoader.WaitForAllDownloads());
-        //LoadData();
     }
 
     public void LoadData()
