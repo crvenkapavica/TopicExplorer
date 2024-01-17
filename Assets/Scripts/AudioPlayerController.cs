@@ -135,11 +135,18 @@ public class AudioPlayerController : MonoBehaviour
         audioSource.time = 0;
         AudioClip tempClip = null;
 
-        do {
-            int ID = Random.Range(0, 6);
-            Persistence.Instance.GetAudioClip(ID, (AudioClip clip) => { tempClip = clip; });
-        } while (tempClip == audioSource.clip);
-        
+        if (audioSource.clip != null) 
+        {
+            do {
+                int ID = Random.Range(0, 6);
+                Persistence.Instance.GetAudioClip(ID, (AudioClip clip) => { tempClip = clip; });
+            } while (tempClip == audioSource.clip);
+        }
+        else
+        {
+            OnPlayPauseClicked();
+        }
+
         audioSource.clip = tempClip;
 
         if (!audioSource.isPlaying)

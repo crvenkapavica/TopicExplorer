@@ -141,4 +141,24 @@ public class DataLoader
 
         Persistence.Instance.LoadData();
     }
+
+    public IEnumerator CheckDownload(string fileName)
+    {
+        string path = Path.Combine(Application.persistentDataPath, fileName);
+        
+        while (!File.Exists(path))
+        {
+            yield return new WaitForSeconds(0.1f);
+        }
+
+        long previousSize = -1;
+        while (true)
+        {
+            long currentSize = new FileInfo(path).Length;
+            if (currentSize == previousSize) break;
+            
+            previousSize = currentSize;
+            yield return new WaitForSeconds(0.1f);
+        }
+    }
 }

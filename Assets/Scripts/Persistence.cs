@@ -38,10 +38,6 @@ public class Persistence : MonoBehaviour
         get { return instance; }
     }
 
-    private void Start()
-    {
-    }
-
     public void LoadData()
     {
         string fileName = "data.json";
@@ -71,7 +67,7 @@ public class Persistence : MonoBehaviour
 
     private IEnumerator LoadAudioClip(int ID, string relativePath)
     {
-        yield return dataLoader.DownloadFiles();
+        yield return dataLoader.CheckDownload(relativePath);
 
         string path = "file:///" + Path.Combine(Application.persistentDataPath, relativePath);
         
