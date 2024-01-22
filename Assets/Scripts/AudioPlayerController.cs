@@ -37,7 +37,7 @@ public class AudioPlayerController : MonoBehaviour
     {
         AutoPlay();
 
-        if (Input.GetMouseButtonDown(0) || Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
+        if (Input.GetMouseButtonDown(0) || Input.touchCount > 0)
         {
             CheckInputForProgressBarRect();
         }
@@ -141,15 +141,11 @@ public class AudioPlayerController : MonoBehaviour
                 int ID = Random.Range(0, 6);
                 Persistence.Instance.GetAudioClip(ID, (AudioClip clip) => { tempClip = clip; });
             } while (tempClip == audioSource.clip);
+
+            audioSource.clip = tempClip;
+            audioSource.Play();
         }
         else
-        {
-            OnPlayPauseClicked();
-        }
-
-        audioSource.clip = tempClip;
-
-        if (!audioSource.isPlaying)
         {
             OnPlayPauseClicked();
         }

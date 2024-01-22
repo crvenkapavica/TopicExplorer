@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Obstacle : MonoBehaviour
 {
-    public float speed = 9f;
+    public float speed = 8f;
 
     void Update()
     {
