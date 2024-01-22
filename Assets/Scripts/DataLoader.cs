@@ -113,37 +113,52 @@ public class DataLoader
 
     public IEnumerator DownloadFiles()
     {
-        foreach (var url in fileUrls)
+        for (int i = 1; i < fileUrls.Length; i++)
         {
-            yield return DownloadAndSave(url, Path.GetFileName(url));
+            yield return DownloadAndSave(fileUrls[i], Path.GetFileName(fileUrls[i]));
         }
-
-        CopyFilesToPersistentData();
     }
 
     private IEnumerator DownloadAndSave(string fileUrl, string fileName)
     {
-        string savePath = Path.Combine(Application.streamingAssetsPath, fileName);
+        string savePath = Path.Combine(Application.persistentDataPath, fileName);
 
         using (UnityWebRequest webRequest = UnityWebRequest.Get(fileUrl))
         {
-            webRequest.downloadHandler = new DownloadHandlerFile(savePath);
             yield return webRequest.SendWebRequest();
+
+            byte[] fileData = webRequest.downloadHandler.data;
+            File.WriteAllBytes(savePath, fileData);
         }
     }
 
-    private void CopyFilesToPersistentData()
+    public IEnumerator DownloadJsonData()
     {
-        foreach (var url in fileUrls)
-        {
-            string fileName = Path.GetFileName(url);
-            string sourcePath = Path.Combine(Application.streamingAssetsPath, fileName);
-            string destinationPath = Path.Combine(Application.persistentDataPath, fileName);
+        string fileUrl = fileUrls[0];
+        string fileName = Path.GetFileName(fileUrl);
 
-            if (File.Exists(sourcePath))
-            {
-                File.Copy(sourcePath, destinationPath, true);
-            }
+        yield return DownloadAndSave(fileUrl, fileName);
+
+        Persistence.Instance.LoadData();
+    }
+
+    public IEnumerator CheckDownload(string fileName)
+    {
+        string path = Path.Combine(Application.persistentDataPath, fileName);
+        
+        while (!File.Exists(path))
+        {
+            yield return new WaitForSeconds(0.1f);
+        }
+
+        long previousSize = -1;
+        while (true)
+        {
+            long currentSize = new FileInfo(path).Length;
+            if (currentSize == previousSize) break;
+            
+            previousSize = currentSize;
+            yield return new WaitForSeconds(0.1f);
         }
     }
 }

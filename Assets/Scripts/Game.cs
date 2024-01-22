@@ -7,14 +7,17 @@ public class Game : AudioPlayerController
 {
     public GameObject playerPrefab;
     public GameObject obstaclePrefab;
+    public TextMeshProUGUI levelText;
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI gameOverText;
 
     private Button startButton;
     private GameObject player;
+    private Coroutine nextLevelCoroutine;
 
     private float spawnRate = 1.5f; 
     private float nextSpawnTime;
+    private int level = 1;
     private int score = 0;
     private bool bIsGamePlaying = false;
 
@@ -43,6 +46,7 @@ public class Game : AudioPlayerController
         bIsGamePlaying = true;
         gameOverText.gameObject.SetActive(false);
         startButton.gameObject.SetActive(false);
+        levelText.text = "LEVEL: 1";
         scoreText.text = "SCORE: 0";
 
         Camera mainCamera = Camera.main;
@@ -50,13 +54,15 @@ public class Game : AudioPlayerController
         spawnPosition.z = 0;
         player = Instantiate(playerPrefab, spawnPosition, Quaternion.identity);
 
-        StartCoroutine(NextLevel());
+        nextLevelCoroutine = StartCoroutine(NextLevel());
     }
 
     private IEnumerator NextLevel()
     {
-        while (bIsGamePlaying)
+        while (true)
         {
+            yield return new WaitForSeconds(5);
+
             if (spawnRate >= 1f)
             {
                 spawnRate -= 0.2f;
@@ -65,11 +71,17 @@ public class Game : AudioPlayerController
             {
                 spawnRate -= 0.1f;
             }
-            else if (spawnRate == 0.1f)
+            else
             {
-                spawnRate = 0.025f;
+                spawnRate -= 0.025f;
             }
-            yield return new WaitForSeconds(5); 
+
+            IncrementLevel();
+
+            if (spawnRate <= 0.0755f)
+            {
+                StopCoroutine(nextLevelCoroutine);
+            }
         }
     }
 
@@ -79,6 +91,12 @@ public class Game : AudioPlayerController
         float randomX = Random.Range(-screenWidth, screenWidth);
         Vector3 spawnPosition = new Vector3(randomX, Camera.main.ScreenToWorldPoint(new Vector2(0, Screen.height)).y + 1, 0);
         Instantiate(obstaclePrefab, spawnPosition, Quaternion.identity);
+    }
+
+    private void IncrementLevel()
+    {
+        ++level;
+        levelText.text = "LEVEL: " + level.ToString();
     }
 
     public void IncrementScore()
@@ -99,7 +117,10 @@ public class Game : AudioPlayerController
 
         GameObject.Destroy(player.gameObject);
 
+        StopCoroutine(nextLevelCoroutine);
+
         gameOverText.text = "GAME OVER\nSCORE: " + score.ToString();
+        level = 1;
         score = 0;
         spawnRate = 1.5f;
         gameOverText.gameObject.SetActive(true);

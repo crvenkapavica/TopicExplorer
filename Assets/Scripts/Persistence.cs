@@ -24,6 +24,7 @@ public class Persistence : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(gameObject);
 
+            StartCoroutine(dataLoader.DownloadJsonData());
             StartCoroutine(dataLoader.DownloadFiles());
         }   
         else
@@ -37,12 +38,7 @@ public class Persistence : MonoBehaviour
         get { return instance; }
     }
 
-    private void Start()
-    {
-        LoadData();
-    }
-
-    private void LoadData()
+    public void LoadData()
     {
         string fileName = "data.json";
         string path = Path.Combine(Application.persistentDataPath, fileName);
@@ -65,10 +61,14 @@ public class Persistence : MonoBehaviour
             }
             ++topicID;
         }
+
+        GameObject.FindObjectOfType<LanguageButtons>().CreateLanguageButtons();
     }
 
     private IEnumerator LoadAudioClip(int ID, string relativePath)
     {
+        yield return dataLoader.CheckDownload(relativePath);
+
         string path = "file:///" + Path.Combine(Application.persistentDataPath, relativePath);
         
         using (UnityWebRequest request = UnityWebRequestMultimedia.GetAudioClip(path, AudioType.OGGVORBIS))
